@@ -1,0 +1,15 @@
+Django==1.4
+psycopg2==2.4.5
+dj-database-url==0.2.0
+South==0.7.3
+django-storages==1.1.7
+boto==2.8.0
+wadofstuff-django-serializers==1.1.0
+mandrill>=1.0.6
+redis==2.7.5
+rq==0.3.7
+APScheduler==2.0.3
+gunicorn==17.5
+newrelic
+pylibmc==1.2.3
+django-pylibmc-sasl==0.2.4
