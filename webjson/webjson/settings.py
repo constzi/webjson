@@ -20,6 +20,19 @@ DATABASES = {
     }
 }
 
+if (ip != '127.0.0.1'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'ec2-54-221-229-7.compute-1.amazonaws.com', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'df06s8130cgak6',                      # Or path to database file if using sqlite3.
+            'USER': 'cnsevuhrovowxk',                      # Not used with sqlite3.
+            'PASSWORD': 'NOksN1hlo4Iw4WTJQxYABaSi4Y',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        }
+    }
+    
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
