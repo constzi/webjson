@@ -39,11 +39,8 @@ def tester(request):
     return HttpResponse(simplejson.dumps(bundle, cls=DjangoJSONEncoder, indent=4))  
 
 def trends(request):
-    if request.GET['id'] == "1":
-        #http://nbviewer.ipython.org/urls/raw.github.com/ptwobrussell/Mining-the-Social-Web/master/ipython_notebooks/Chapter1.ipynb
-        auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)   
-        twitter_api = twitter.Twitter(domain='api.twitter.com', api_version='1.1', auth=auth)
-        world_trends = twitter_api.trends.place(_id=WORLD_WOE_ID) 
-        return HttpResponse(json.dumps(world_trends, indent=1))
-    else:
-        return HttpResponse(111)  
+    #http://nbviewer.ipython.org/urls/raw.github.com/ptwobrussell/Mining-the-Social-Web/master/ipython_notebooks/Chapter1.ipynb
+    auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)   
+    twitter_api = twitter.Twitter(domain='api.twitter.com', api_version='1.1', auth=auth)
+    world_trends = twitter_api.trends.place(_id=WORLD_WOE_ID) 
+    return HttpResponse(json.dumps(world_trends, indent=1))
